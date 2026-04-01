@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Dark cinematic theme — primary */
+    --background: 0.12 0.02 255;
+    --foreground: 0.97 0.01 255;
+    --card: 0.16 0.025 255;
+    --card-foreground: 0.97 0.01 255;
+    --popover: 0.18 0.025 255;
+    --popover-foreground: 0.97 0.01 255;
+    --primary: 0.82 0.14 205;
+    --primary-foreground: 0.1 0.02 255;
+    --secondary: 0.19 0.03 255;
+    --secondary-foreground: 0.97 0.01 255;
+    --muted: 0.19 0.025 255;
+    --muted-foreground: 0.6 0.04 255;
+    --accent: 0.82 0.14 205;
+    --accent-foreground: 0.1 0.02 255;
+    --destructive: 0.577 0.245 27;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.24 0.04 255;
+    --input: 0.2 0.03 255;
+    --ring: 0.82 0.14 205;
+    --chart-1: 0.82 0.14 205;
+    --chart-2: 0.72 0.12 210;
+    --chart-3: 0.6 0.08 230;
+    --chart-4: 0.5 0.06 240;
+    --chart-5: 0.4 0.04 250;
+    --sidebar: 0.14 0.02 255;
+    --sidebar-foreground: 0.97 0.01 255;
+    --sidebar-primary: 0.82 0.14 205;
+    --sidebar-primary-foreground: 0.1 0.02 255;
+    --sidebar-accent: 0.19 0.03 255;
+    --sidebar-accent-foreground: 0.97 0.01 255;
+    --sidebar-border: 0.24 0.04 255;
+    --sidebar-ring: 0.82 0.14 205;
+
+    /* Custom semantic vars */
+    --neon: oklch(0.82 0.14 205);
+    --neon-dim: oklch(0.72 0.12 210);
+    --neon-glow: 0 0 20px oklch(0.82 0.14 205 / 0.6), 0 0 40px
+      oklch(0.82 0.14 205 / 0.3);
+    --text-heading: oklch(0.97 0.01 255);
+    --text-body: oklch(0.72 0.03 255);
+    --text-muted: oklch(0.6 0.04 255);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", system-ui, sans-serif;
+    background: linear-gradient(
+      160deg,
+      oklch(0.12 0.02 255) 0%,
+      oklch(0.15 0.025 255) 50%,
+      oklch(0.18 0.03 255) 100%
+    );
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .neon-text {
+    color: var(--neon);
+    text-shadow: 0 0 10px oklch(0.82 0.14 205 / 0.8), 0 0 30px
+      oklch(0.82 0.14 205 / 0.4);
+  }
+
+  .neon-border {
+    border-color: var(--neon);
+    box-shadow: 0 0 8px oklch(0.82 0.14 205 / 0.4), inset 0 0 8px
+      oklch(0.82 0.14 205 / 0.05);
+  }
+
+  .neon-glow {
+    box-shadow: var(--neon-glow);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 {
+    transition-delay: 0.1s;
+  }
+  .reveal-delay-2 {
+    transition-delay: 0.2s;
+  }
+  .reveal-delay-3 {
+    transition-delay: 0.3s;
+  }
+  .reveal-delay-4 {
+    transition-delay: 0.4s;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 10px oklch(0.82 0.14 205 / 0.4), 0 0 20px
+      oklch(0.82 0.14 205 / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px oklch(0.82 0.14 205 / 0.7), 0 0 40px
+      oklch(0.82 0.14 205 / 0.4);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .glow-pulse {
+    animation: none;
+  }
+}
