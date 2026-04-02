@@ -22,10 +22,9 @@ const portfolioItems = [
   {
     title: "Urban Drift",
     category: "Music Video",
-    beforeGradient:
-      "linear-gradient(135deg, #0a0a10 0%, #161624 50%, #0e0e1c 100%)",
-    afterGradient:
-      "linear-gradient(135deg, #0a1a30 0%, #1a4060 40%, #00b8e0 75%, #80f0ff 100%)",
+    beforeImage: "/assets/img_5423-019d4d35-2f6b-774d-9205-9b7a615d5f7b.png",
+    afterVideo:
+      "/assets/pixverse_v6_image_text_360p_urban_drift_music-019d4d35-2e3e-7643-bdb3-9b1ad316ccbb.mp4",
     desc: "Music video — 4K stabilization, rhythmic cuts, teal/orange contrast grade",
   },
   {
