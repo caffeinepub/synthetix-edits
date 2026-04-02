@@ -30,10 +30,9 @@ const portfolioItems = [
   {
     title: "Launchpad 2024",
     category: "Corporate / Event",
-    beforeGradient:
-      "linear-gradient(135deg, #0c0c14 0%, #181828 50%, #0f0f1e 100%)",
-    afterGradient:
-      "linear-gradient(135deg, #001828 0%, #003a58 35%, #0090b8 70%, #00e8ff 100%)",
+    beforeImage: "/assets/img_5425-019d4d40-3c9e-77dd-b317-21219c91dafd.jpeg",
+    afterVideo:
+      "/assets/pixverse_v6_image_text_360p_add_people_in_even-019d4d40-3dab-71ff-8c43-29ce1b3adb09.mp4",
     desc: "Corporate event highlight reel — lower thirds, branded transitions, 4K delivery",
   },
 ];
