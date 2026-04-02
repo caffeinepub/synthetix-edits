@@ -1,7 +1,5 @@
 export default function Footer() {
   const year = new Date().getFullYear();
-  const hostname =
-    typeof window !== "undefined" ? window.location.hostname : "";
 
   return (
     <footer
@@ -41,6 +39,20 @@ export default function Footer() {
               <br />
               for the Global Stage
             </p>
+            <div className="mt-3">
+              <span
+                className="text-xs"
+                style={{ color: "oklch(0.55 0.04 255)" }}
+              >
+                Owner:{" "}
+              </span>
+              <span
+                className="text-xs font-semibold"
+                style={{ color: "oklch(0.82 0.14 205)" }}
+              >
+                Asjad Sayyed
+              </span>
+            </div>
           </div>
 
           {/* Navigation */}
@@ -103,15 +115,10 @@ export default function Footer() {
           <p className="text-xs" style={{ color: "oklch(0.55 0.04 255)" }}>
             © {year} Synthetix Edits. Mumbai, India. All rights reserved.
           </p>
-          <a
-            href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs transition-colors hover:text-neon"
-            style={{ color: "oklch(0.55 0.04 255)" }}
-          >
-            Built with ❤️ using caffeine.ai
-          </a>
+          <p className="text-xs" style={{ color: "oklch(0.55 0.04 255)" }}>
+            Founded by{" "}
+            <span style={{ color: "oklch(0.72 0.03 255)" }}>Asjad Sayyed</span>
+          </p>
         </div>
       </div>
     </footer>

@@ -370,6 +370,41 @@ export default function Home() {
                 obsessive attention to detail, guaranteed deadlines, and
                 enterprise-grade secure data workflows.
               </p>
+
+              {/* Owner */}
+              <div
+                className="flex items-center gap-4 mb-6 p-4 rounded-xl border"
+                style={{
+                  background: "oklch(0.82 0.14 205 / 0.06)",
+                  borderColor: "oklch(0.82 0.14 205 / 0.25)",
+                }}
+              >
+                <div
+                  className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 font-bold text-base"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, oklch(0.82 0.14 205), oklch(0.65 0.14 210))",
+                    color: "oklch(0.10 0.02 255)",
+                  }}
+                >
+                  AS
+                </div>
+                <div>
+                  <div
+                    className="text-xs uppercase tracking-widest mb-0.5"
+                    style={{ color: "oklch(0.65 0.04 255)" }}
+                  >
+                    Founder & Owner
+                  </div>
+                  <div
+                    className="font-bold text-base"
+                    style={{ color: "oklch(0.97 0.01 255)" }}
+                  >
+                    Asjad Sayyed
+                  </div>
+                </div>
+              </div>
+
               <div className="flex flex-wrap gap-3">
                 {[
                   "ISO-Grade Precision",
@@ -562,6 +597,70 @@ export default function Home() {
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="mt-8 space-y-3">
+                <a
+                  href="https://wa.me/919967485827"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 group"
+                >
+                  <span className="text-xl">💬</span>
+                  <div>
+                    <div
+                      className="text-xs uppercase tracking-widest mb-0.5"
+                      style={{ color: "oklch(0.65 0.04 255)" }}
+                    >
+                      WhatsApp
+                    </div>
+                    <div
+                      className="font-semibold text-sm group-hover:text-white transition-colors"
+                      style={{ color: "oklch(0.82 0.12 160)" }}
+                    >
+                      +91 99674 85827
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="tel:+918879846599"
+                  className="flex items-center gap-3 group"
+                >
+                  <span className="text-xl">📞</span>
+                  <div>
+                    <div
+                      className="text-xs uppercase tracking-widest mb-0.5"
+                      style={{ color: "oklch(0.65 0.04 255)" }}
+                    >
+                      Call
+                    </div>
+                    <div
+                      className="font-semibold text-sm group-hover:text-white transition-colors"
+                      style={{ color: "oklch(0.97 0.01 255)" }}
+                    >
+                      +91 88798 46599
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="mailto:sayyeddasjad@gmail.com"
+                  className="flex items-center gap-3 group"
+                >
+                  <span className="text-xl">✉️</span>
+                  <div>
+                    <div
+                      className="text-xs uppercase tracking-widest mb-0.5"
+                      style={{ color: "oklch(0.65 0.04 255)" }}
+                    >
+                      Email
+                    </div>
+                    <div
+                      className="font-semibold text-sm group-hover:text-white transition-colors"
+                      style={{ color: "oklch(0.97 0.01 255)" }}
+                    >
+                      sayyeddasjad@gmail.com
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
 

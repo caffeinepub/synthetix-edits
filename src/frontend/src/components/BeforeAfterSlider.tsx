@@ -5,6 +5,8 @@ interface Props {
   afterGradient?: string;
   beforeImage?: string;
   afterImage?: string;
+  beforeVideo?: string;
+  afterVideo?: string;
   beforeLabel?: string;
   afterLabel?: string;
 }
@@ -14,6 +16,8 @@ export default function BeforeAfterSlider({
   afterGradient,
   beforeImage,
   afterImage,
+  beforeVideo,
+  afterVideo,
   beforeLabel = "Before",
   afterLabel = "After",
 }: Props) {
@@ -44,25 +48,25 @@ export default function BeforeAfterSlider({
     isDragging.current = false;
   };
 
-  const afterStyle = afterImage
+  const afterBg = afterImage
     ? {
         backgroundImage: `url(${afterImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }
-    : { background: afterGradient };
+    : afterGradient
+      ? { background: afterGradient }
+      : undefined;
 
-  const beforeStyle = beforeImage
+  const beforeBg = beforeImage
     ? {
         backgroundImage: `url(${beforeImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        clipPath: `inset(0 ${100 - position}% 0 0)`,
       }
-    : {
-        background: beforeGradient,
-        clipPath: `inset(0 ${100 - position}% 0 0)`,
-      };
+    : beforeGradient
+      ? { background: beforeGradient }
+      : undefined;
 
   return (
     <div
@@ -75,10 +79,39 @@ export default function BeforeAfterSlider({
       data-ocid="portfolio.canvas_target"
     >
       {/* After panel (full width background) */}
-      <div className="absolute inset-0" style={afterStyle} />
+      {afterVideo ? (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src={afterVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      ) : (
+        <div className="absolute inset-0" style={afterBg} />
+      )}
 
       {/* Before panel (clipped to left side) */}
-      <div className="absolute inset-0" style={beforeStyle} />
+      {beforeVideo ? (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src={beforeVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        />
+      ) : (
+        <div
+          className="absolute inset-0"
+          style={{
+            ...beforeBg,
+            clipPath: `inset(0 ${100 - position}% 0 0)`,
+          }}
+        />
+      )}
 
       {/* Divider line */}
       <div

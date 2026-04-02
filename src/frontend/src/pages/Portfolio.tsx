@@ -14,10 +14,9 @@ const portfolioItems = [
   {
     title: "Brand Pulse",
     category: "Commercial / Ad",
-    beforeGradient:
-      "linear-gradient(135deg, #111118 0%, #1c1c28 50%, #141420 100%)",
-    afterGradient:
-      "linear-gradient(135deg, #00141f 0%, #005577 30%, #00a8c8 70%, #40e8ff 100%)",
+    beforeVideo:
+      "/assets/aqoby_liw1b3qwhj3tqjkifre8tauz1idvdxzxktfg5lghq01no0usjwejvh33uedlsmtckbznckpqvla2r2oe7awyhl0xxrpgyc-019d4930-14f4-7148-891b-2eea0ec68289.mov",
+    afterVideo: "/assets/example-019d4930-1688-7329-8929-e7c9cf317bd6.mp4",
     desc: "30-second broadcast ad — motion graphics, sound design, BBFC-ready export",
   },
   {
@@ -88,6 +87,8 @@ export default function Portfolio() {
               <BeforeAfterSlider
                 beforeImage={(item as { beforeImage?: string }).beforeImage}
                 afterImage={(item as { afterImage?: string }).afterImage}
+                beforeVideo={(item as { beforeVideo?: string }).beforeVideo}
+                afterVideo={(item as { afterVideo?: string }).afterVideo}
                 beforeGradient={
                   (item as { beforeGradient?: string }).beforeGradient
                 }
